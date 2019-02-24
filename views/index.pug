@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    div#welcome-container
+      div#welcome
+        p#paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        div#action-button-div
+          a#action-button(type="button" href="#index-content") LETS EXPLORE MORE
+    div#index-content
+      div.left1.interests-content
+        div.writing#software-writing
+            h1.title About Node.js
+            p.article Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kull Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+            a.devamini-oku.devamini-oku-index(href="#")
+        div.picture#software
+          div.layout-index
+            h2.content-title#software-title #Software
+      div.right1.interests-content
+        div.writing#design-writing 
+            h1.title Design Patterns
+            p.article Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kull Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+            a.devamini-oku.devamini-oku-index(href="#")
+        div.picture#design
+          div.layout-index
+              h2.content-title#design-title #Design
+      div.left2.interests-content
+        div.writing#health-writing
+            h1.title How can you live healthy?
+            p.article Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kull Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+            a.devamini-oku.devamini-oku-index(href="#")
+        div.picture#health
+          div.layout-index
+              h2.content-title#health-title #Health
+        
+    div#keep-in-touch-container
+        h1#contact Keep In Touch
+        div#keep-in-touch
+          form#contact-infos(method="POST" action='/')
+            //input#name.form-value(type="text" pattern="[A-Za-z]+" name="name" placeholder="NAME")
+            //input#surname.form-value(type="text" pattern="[A-Za-z]+" name="surname" placeholder="SURNAME")
+            input#e-mail.form-value(type="text" name="mail" pattern=".+@.+\..+" placeholder="E-MAİL")
+            //input#phone-number.form-value(type="text" pattern="0[0-9]{10}" name="number" placeholder="NUMBER (Optional)")
+            //input#verify.form-value(type="checkbox" name="verify" value="false") 
+            //span#verify-span İletişim bilgilerimin kullanılmasını onaylıyorum
+            input#submit.form-value(type="submit" value="Submit")
+                
+          

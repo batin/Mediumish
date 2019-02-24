@@ -1,0 +1,7 @@
+extends profile 
+block message 
+  if success
+    div#succes-message Post kaydedildi #{name} #{surname}
+  if !success
+    div#fail-message Post kaydedilemedi #{name} #{surname}
+      

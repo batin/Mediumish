@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  block error
+  div#login-page
+    form.form-signin(method="POST" action="/login")
+      .text-center.mb-4
+        img.mb-4(src = '/photos/logo.jpeg', alt='', width='72', height='72')
+        h1.h3.mb-3.font-weight-normal Discover the Art
+        p
+           
+        
+          
+          
+      .form-label-group
+        input#inputEmail.form-control(type='email', placeholder='Email address', name="email" required='true', autofocus='true')
+        label(for='inputEmail') Email address
+      .form-label-group
+        input#inputPassword.form-control(type='password', placeholder='Password', name= 'password' required='true')
+        label(for='inputPassword') Password
+      .checkbox.mb-3
+        label
+          input(type='checkbox', value='remember-me')
+          |  Remember me
+      button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
+      p.mt-5.mb-3.text-muted.text-center © 2017-2018

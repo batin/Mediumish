@@ -1,0 +1,50 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.2.1/bin/node',
+1 verbose cli   '/Users/cagatay/.npm-packages/bin/npm',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
+2 info using npm@3.10.9
+3 info using node@v7.2.0
+4 info git [ 'status', '--porcelain' ]
+5 info lifecycle cr34t3@1.0.36~preversion: cr34t3@1.0.36
+6 silly lifecycle cr34t3@1.0.36~preversion: no script for preversion, continuing
+7 verbose version.write data { name: 'cr34t3',
+7 verbose version.write   version: '1.0.36',
+7 verbose version.write   description: 'Create github repository in programmatically.',
+7 verbose version.write   main: 'index.js',
+7 verbose version.write   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+7 verbose version.write   repository:
+7 verbose version.write    { type: 'git',
+7 verbose version.write      url: 'git+https://github.com/cagataycali/cr34te.git' },
+7 verbose version.write   keywords: [ 'Git', 'cli', 'nodejs' ],
+7 verbose version.write   author: 'Çağatay Çalı',
+7 verbose version.write   license: 'ISC',
+7 verbose version.write   bugs: { url: 'https://github.com/cagataycali/cr34te/issues' },
+7 verbose version.write   homepage: 'https://github.com/cagataycali/cr34te#readme',
+7 verbose version.write   dependencies:
+7 verbose version.write    { '3x3c': '^1.0.1',
+7 verbose version.write      async: '^2.0.1',
+7 verbose version.write      br4nch: '^1.0.3',
+7 verbose version.write      cmdify: '0.0.4',
+7 verbose version.write      colors: '^1.1.2',
+7 verbose version.write      inquirer: '^1.1.3',
+7 verbose version.write      'node-emoji': '^1.3.1',
+7 verbose version.write      prompt: '^1.0.0',
+7 verbose version.write      spawnback: '^1.0.0',
+7 verbose version.write      'update-notifier': '^1.0.2' } } to package.json
+8 info lifecycle cr34t3@1.0.36~version: cr34t3@1.0.36
+9 verbose stack Error: write EPIPE
+9 verbose stack     at exports._errnoException (util.js:1022:11)
+9 verbose stack     at WriteWrap.afterWrite [as oncomplete] (net.js:804:14)
+10 verbose cwd /Users/cagatay/Desktop/cr34te
+11 error Darwin 16.1.0
+12 error argv "/usr/local/Cellar/node/6.2.1/bin/node" "/Users/cagatay/.npm-packages/bin/npm" "version" "patch"
+13 error node v7.2.0
+14 error npm  v3.10.9
+15 error code EPIPE
+16 error errno EPIPE
+17 error syscall write
+18 error write EPIPE
+19 error If you need help, you may report this error at:
+19 error     <https://github.com/npm/npm/issues>
+20 verbose exit [ 1, true ]

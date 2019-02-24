@@ -1,0 +1,440 @@
+a:active, a:hover, a:focus, a:link, a:visited {
+  text-decoration: none !important;
+
+}
+#navbar {
+  width: 100%;
+  height: 50px;
+}
+#welcome{
+  width: 60%;
+  height: 19%;
+  display: inline-block;
+  top: 40%;
+  position: relative;
+  left: 19%;
+  color: white;
+}
+#welcome-container {
+  display:block;
+  position: relative;
+  margin-top: 50px;
+  background-image: url("/photos/background.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+#paragraph{
+  text-align: center;
+}
+#index-content p{
+  text-overflow: inherit;
+}
+#action-button {
+  margin: 0 auto;
+  display: table;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 8px;
+   -webkit-transition: all 3s ease;
+   text-decoration: none;
+}
+
+
+
+#content-container{
+  padding-top: 20px;
+  width: 100%;
+  height: 75%;
+  background-color:   #f5e1f44d;
+}
+
+
+
+#login-page {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  height: 3.125rem;
+  padding: .75rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+#keep-in-touch-container{
+  width: 15%;
+  height: 80px;
+  margin: auto;
+  display: flex-root;
+  margin-top: 160px;
+  margin-bottom: 160px;
+}
+.form-value{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  color: black;
+  opacity: 0.8;
+}
+#submit{
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  letter-spacing: 1.1px;
+}
+#verify{
+  float: left;
+  display: inline-block;
+  width: 13px;
+  margin-right: 5px;
+  height: 13px;
+}
+.sidenav a {
+  color: black;
+}
+#register-page{
+position: relative;
+width: 30%;
+margin: auto;
+padding-right: 15px;
+padding-left: 15px;
+margin-top: 150px;
+}
+#mail-label{
+  display: block;
+}
+#profile-img{
+  width:100%;
+
+}
+#profile-header{
+  margin-top:50px;
+  background-image: url("/photos/backgroundprofile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+#profile-picture{
+  width: 10%;
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  border: 3px solid white;
+  margin: auto;
+  background-image: url("/photos/profile-picture.jpg");
+  background-size: cover;
+  background-position: bottom;
+
+}
+#layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding-top: 150px;
+
+
+}
+#user-info-table {
+  margin: auto;
+  color: white;
+  width: 700px;
+
+}
+
+#ad-soyad{
+  text-align: center;
+  color: white;
+}
+td{
+  padding-left: 22px;
+}
+#duzenle:active,#duzenle:hover, #duzenle  {
+  display: none;
+  width: 64px;
+  height: 25px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  left: 90px;
+}
+#profile-picture:hover #duzenle{
+  display: block;
+}
+
+
+#bio, #sayi {
+  font-weight: 100;
+}
+.post {
+  width: 60%;
+  margin:auto;
+  margin-top: 50px;
+  -webkit-box-shadow: 0px 0px 218px -154px rgba(0,0,0,0.83);
+  -moz-box-shadow: 0px 0px 218px -154px rgba(0,0,0,0.83);
+  box-shadow: 0px 0px 218px -154px rgba(0,0,0,0.83);
+  padding-bottom: 20px;
+}
+.baslik {
+  text-align: center;
+}
+#postlar {
+  padding-top: 50px;
+}
+.devamini-oku{
+  border: 2px solid #057dff;
+  padding-top: 1px;
+  background: #057dff;
+  color: white;
+  text-align: center;
+  margin: auto;
+  display: table;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.devamini-oku:hover{
+  color: #057dff;
+  background-color: white;
+}
+#software {
+  background-image: url("/photos/software.jpg");
+}
+
+#design {
+  background-image: url("/photos/design.jpg");
+}
+#design:hover, #software:hover, #health:hover {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+#health {
+  background-image: url("/photos/healthy.jpg");
+}
+#index-content {
+
+}
+.interests-content{
+  position: relative;
+  width: 60%;
+  height: 33%;
+  opacity: 0;
+}
+.writing{
+  position: relative;
+  float: left;
+  width: 50%;
+  padding-top: 30px;
+}
+#design-writing{
+  float:right;
+  padding-left: 30px;
+}
+.picture{
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  float: right;
+}
+#index-content {
+  padding-top: 80px;
+}
+.layout-index{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 21%;
+}
+.content-title{
+  color: white;
+  text-align: center;
+}
+#add-post{
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+  color: rgb(5, 125, 255);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+#go-back{
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+  color: rgb(5, 125, 255);
+  cursor: pointer;
+  box-sizing: border-box;
+  display: none;
+}
+#add{
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  right: 0;
+  float: right;
+  bottom: 0;
+}
+#add-post:hover , #go-back:hover{
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+  transition: 1s;
+  color: rgb(5, 125, 255,0.8);
+}
+#post-page{
+  display: none;
+
+}
+#post{
+  width: 65%;
+  height: 85%;
+  margin: auto;
+  padding-top: 30px;
+
+}
+#post-title , #post-text , #tags{
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  border: 7px solid bisque;
+  border-radius: 6px;
+}
+input{
+  text-indent: 10px;
+}
+#post-title{
+  height: 10%;
+}
+#post-text{
+  height: 80%;
+  cursor: text;
+}
+#post-text-input{
+  border: none;
+  width: 100%;
+  display: block;
+}
+#post-text::placeholder {
+  font-size: 20px;
+}
+#post input , #content-paylas{
+  margin-top:20px;
+}
+#content-paylas{
+  margin-bottom:20px;
+}
+#succes-message {
+  position: absolute;
+  background-color: lightgreen;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding-top: 5px;
+  z-index: 1000;
+}
+#fail-message {
+  position: absolute;
+  background-color: lightsalmon;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding-top: 5px;
+  z-index: 1000;
+}
+
+#errorPage{
+  width: 50%;
+  height: auto;
+  margin: auto;
+  background: lightcoral;
+  color: white;
+  display: block;
+  text-align: center;
+  margin-top: 59px;
+  border: 3px solid lightcoral;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+#errorPage h1 {
+  font-size: 20px;
+}
+#login-page {
+  background: white !important;
+}
