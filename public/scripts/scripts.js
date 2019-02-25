@@ -11,9 +11,12 @@ const errorPage = $("#errorPage")
 let url = pathname.split("/");
 url = url[3]
 if (url==="profile"){
-
+/*
+* profile page
+* gets posts as a Json
+*/
 const postlar = $("#postlar")
-let loadedPosts = 3
+let loadedPosts = 3 //posts that already loaded
 let posts = $.ajax({
   url: "scroll_json.js",
   async: false,
@@ -22,7 +25,10 @@ let posts = $.ajax({
 
 let addedPosts = 3;
 let border = 4;
-
+/*
+* profile page
+* this function is triggered when users scroll
+*/
 $(window).scroll( function () {
   const scrollBottom = clientWindow.height() + clientWindow.scrollTop()
   const bottomPostlar  = $('#postlar').position().top + $("#postlar").height() -100
@@ -38,15 +44,15 @@ $(window).scroll( function () {
                       "</div>"
         }
         postlar.append(loadingPosts)
-
         border = border + 1
       }
   }
-
 })
-
 }
-
+/*
+* profile page
+* info message div will disappear after 2 sec
+*/
 const disappearFunc = (div)=>{
   div.load(
     setTimeout( _=> {
@@ -54,7 +60,10 @@ const disappearFunc = (div)=>{
     }, 2000)
   )
 }
-
+/*
+* Home page
+* animates hashtag divs
+*/
 const animateFunction =  _ =>{
     $(".left1").animate(
 	{'left': '50%','margin-left': - $('.left1').width()/2 , opacity: 1},
@@ -85,7 +94,10 @@ const animateFunction =  _ =>{
 
 $("#welcome-container").css({ width: width + "px", height: height + "px" })
 $("#index-content").css({ width: width + "px", height: height + "px" })
-
+/*
+* Home page
+* animation of click to see more button(scrolls down)
+*/
 $("#action-button").click(e => {
   e.preventDefault()
   const position = $("#index-content").offset().top
@@ -101,7 +113,10 @@ clientWindow.on("scroll" , _ => {
    }
 })
 }
-
+/*
+* Profile page
+* removes content div & opens posting page div
+*/
 addButton.click( _ => {
   const contentDiv = $("#profile-content")
   $("#go-back").css({display:'block'})
@@ -111,7 +126,10 @@ addButton.click( _ => {
   const position = postPage.offset().top
     $(window).animate($(window).scrollTop(position), 1500)
 })
-
+/*
+* Profile page
+* removes posting page div & opens content div
+*/
 goBack.click( _ => {
   const contentDiv = $("#profile-content")
   $("#add-post").css({display:'block'})
@@ -120,10 +138,14 @@ goBack.click( _ => {
   postPage.css({ display: "none", height: height + "px", width: 100 + '%'})
   clientWindow.scrollTop(0)
 })
-
+/*
+* profile page - Posting part
+* when user clicks on the text area it focuses on textline
+*/
 $('#post-text').on('click', _ => {
   $('#post-text-input').focus()
 })
+
 if (url==="profile"){
   disappearFunc(succesMessage)
   disappearFunc(failMessage)

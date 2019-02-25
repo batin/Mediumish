@@ -9,7 +9,9 @@ const Subscriber = require("./models/subscribe")
 const app = express()
 const connect = require('connect')
 
-
+/*
+* db connection
+*/
 mongoose.connect(
   "mongodb://localhost:27017/medium",
   { useCreateIndex: true,

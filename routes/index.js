@@ -7,7 +7,10 @@ let bcrypt = require("bcrypt")
 const session = require("express-session")
 const saltRounds = 10
 const Post = require("../models/post")
-
+/*
+*
+* returns sorted posts as a Json
+*/
 router.get("/scroll_json.js", async (req, res) => {
   if (req.session) {
     const id = req.session.userId
@@ -23,7 +26,9 @@ router.get("/scroll_json.js", async (req, res) => {
     res.redirect("profile")
   }
 })
-
+/*
+* renders profile with last three post
+*/
 router.get("/profile", async (req, res) => {
   const id = req.session.userId
   if (id) {
@@ -42,6 +47,9 @@ router.get("/profile", async (req, res) => {
     res.redirect(301, "/login")
   }
 })
+/*
+* posts posts to db
+*/
 router.post("/profile", async (req, res, next) => {
   let { postTitle, postText, postTags } = req.body
   id = req.session.userId
@@ -60,15 +68,15 @@ router.post("/profile", async (req, res, next) => {
       date
     })
     post = await query.catch(err => res.send(err))
-    let btn = user.posts.push(post)
+    let btn = user.posts.push(post)  // post pushed users posts
 
-    user.save(err => {
+    user.save(err => { // saved
       if (err) return next(err)
       console.log("Post added!")
     })
 
     res.render("success", {
-      success: true,
+      success: true,// post posted
       name: user.firstName,
       surname: user.lastName,
       posts: user.posts.reverse().slice(0, 3),
@@ -76,7 +84,7 @@ router.post("/profile", async (req, res, next) => {
     })
   } else {
     res.render("success", {
-      success: false,
+      success: false, // post couldn't posted
       name: user.firstName,
       surname: user.lastName,
       posts: user.posts.reverse().slice(0, 3),
@@ -84,6 +92,7 @@ router.post("/profile", async (req, res, next) => {
     })
   }
 })
+
 router.get("/login", (req, res) => {
   if (req.session.userId) {
     res.redirect(301, "/profile")
@@ -114,7 +123,7 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body
 
   if (!email || !password) {
-    var err = "Email ve Password boş olamaz"
+    var err = "Email and Password can not be blank"
     res.render("login", {error : err})
   } else {
     // https://mongoosejs.com/docs/promises.html#queries-are-not-promises
@@ -132,7 +141,7 @@ router.post("/login", async (req, res) => {
   }
 })
 
-router.post("/login", async (req, res, next) => {
+router.post("/register", async (req, res, next) => {
   let {
     firstName,
     lastName,
