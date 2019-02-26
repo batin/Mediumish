@@ -57,17 +57,6 @@ router.post("/profile", async (req, res, next) => {
   if (id) {
     const query = User.findOne({ _id: id }).exec()
     user = await query.catch(_ => res.status(404).send("simting gini shit"))
-<<<<<<< current
-
-  }
-
-  var found = user.posts.filter((post) => {
-    return post.postTitle.indexOf(postTitle) > -1 })
-  let int = 0 + found.length
-  let url =  `${user.userName}${postTitle}${int}`
-  console.log(url)
-
-=======
 }
   let counter = 0
   let found = user.posts.forEach(post => {
@@ -76,7 +65,6 @@ router.post("/profile", async (req, res, next) => {
     }
    })
   let url =  user.userName +"-"+ postTitle +"-""+ (counter + 1)
->>>>>>> before discard
   let date = Date.now()
   if (postTitle || postText || postTags) {
     let query = Post.create({
