@@ -57,10 +57,15 @@ router.post("/profile", async (req, res, next) => {
   if (id) {
     const query = User.findOne({ _id: id }).exec()
     user = await query.catch(_ => res.status(404).send("simting gini shit"))
-  }
-  var found = user.posts.filter(user.posts.postTitle => { user.posts.postTitle == postTitle })
-
-  let int = 0 + found.length
+}
+  let counter = 0
+  let found = user.posts.forEach(post => {
+    if(post.postTitle === postTitle) {
+      counter ++
+    }
+   })
+  console.log(counter);
+  let int = 0
   console.log(int)
   console.log(found)
   console.log("denemee")
