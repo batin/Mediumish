@@ -64,12 +64,7 @@ router.post("/profile", async (req, res, next) => {
       counter ++
     }
    })
-  console.log(counter);
-  let int = 0
-  console.log(int)
-  console.log(found)
-  console.log("denemee")
-  let url =  user.username + "" + postTitle +""+ int
+  let url =  user.username + "" + postTitle +""+ counter + 1
   let date = Date.now()
   if (postTitle || postText || postTags) {
     let query = Post.create({
