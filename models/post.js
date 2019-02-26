@@ -7,7 +7,7 @@ PostSchema = new Schema({
   url: {
     type : String,
     required : true,
-    trim: false
+    trim: true
 
   },
   postTitle: {
