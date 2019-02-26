@@ -64,7 +64,8 @@ router.post("/profile", async (req, res, next) => {
       counter ++
     }
    })
-  let url =  user.username + "" + postTitle +""+ counter + 1
+  let url =  user.userName + "" + postTitle +""+ (counter + 1)
+  console.log(url)
   let date = Date.now()
   if (postTitle || postText || postTags) {
     let query = Post.create({
