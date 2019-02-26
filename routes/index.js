@@ -64,7 +64,8 @@ router.post("/profile", async (req, res, next) => {
       counter ++
     }
    })
-  let url =  user.userName +"-"+ postTitle +"-"+ (counter + 1)
+  let urlPostTitle = postTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '').toLowerCase()
+  let url = user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
   let date = Date.now()
   if (postTitle || postText || postTags) {
     let query = Post.create({
