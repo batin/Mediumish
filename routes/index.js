@@ -8,9 +8,9 @@ const session = require("express-session")
 const saltRounds = 10
 const Post = require("../models/post")
 /*
-*
-* returns sorted posts as a Json
-*/
+ *
+ * returns sorted posts as a Json
+ */
 router.get("/scroll_json.js", async (req, res) => {
   if (req.session) {
     const id = req.session.userId
@@ -27,8 +27,8 @@ router.get("/scroll_json.js", async (req, res) => {
   }
 })
 /*
-* renders profile with last three post
-*/
+ * renders profile with last three post
+ */
 router.get("/profile", async (req, res) => {
   const id = req.session.userId
   if (id) {
@@ -48,8 +48,8 @@ router.get("/profile", async (req, res) => {
   }
 })
 /*
-* posts posts to db
-*/
+ * posts posts to db
+ */
 router.post("/profile", async (req, res, next) => {
   let { postTitle, postText, postTags } = req.body
   id = req.session.userId
@@ -68,15 +68,16 @@ router.post("/profile", async (req, res, next) => {
       date
     })
     post = await query.catch(err => res.send(err))
-    let btn = user.posts.push(post)  // post pushed users posts
+    let btn = user.posts.push(post) // post pushed users posts
 
-    user.save(err => { // saved
+    user.save(err => {
+      // saved
       if (err) return next(err)
       console.log("Post added!")
     })
 
     res.render("success", {
-      success: true,// post posted
+      success: true, // post posted
       name: user.firstName,
       surname: user.lastName,
       posts: user.posts.reverse().slice(0, 3),
@@ -124,19 +125,24 @@ router.post("/login", async (req, res) => {
 
   if (!email || !password) {
     var err = "Email and Password can not be blank"
-    res.render("login", {error : err})
+    res.render("login", { error: err })
   } else {
     // https://mongoosejs.com/docs/promises.html#queries-are-not-promises
     const query = User.findOne({ email }).exec()
     const user = await query.catch(_ =>
       res.status(404).send("Something gone shit")
     )
-    if (bcrypt.compareSync(password, user.password)) {
-      req.session.userId = user._id
-      res.redirect("/profile")
+    if (user) {
+      if (bcrypt.compareSync(password, user.password)) {
+        req.session.userId = user._id
+        res.redirect("/profile")
+      } else {
+        var err = "Wrong Password."
+        res.render("login", { error: err })
+      }
     } else {
-      var err = "Wrong Password."
-      res.render("login", {error : err})
+      var err = "User Could Not Found"
+      res.render("login", { error: err })
     }
   }
 })
