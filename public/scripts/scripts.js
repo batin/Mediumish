@@ -155,7 +155,10 @@ if(url==="login"){
   disappearFunc(errorPage)
 }
 
+$('.devamini-oku').on('click', _ =>{
+    
 
+})
 
 
 
