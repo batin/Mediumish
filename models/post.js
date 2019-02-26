@@ -4,6 +4,12 @@ const User = require('./user')
 var Schema = mongoose.Schema
 
 PostSchema = new Schema({
+  url: {
+    type : String,
+    required : true,
+    trim: false
+
+  },
   postTitle: {
     type: String,
     required: true,

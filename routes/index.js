@@ -58,9 +58,17 @@ router.post("/profile", async (req, res, next) => {
     const query = User.findOne({ _id: id }).exec()
     user = await query.catch(_ => res.status(404).send("simting gini shit"))
   }
+  var found = user.posts.filter(user.posts.postTitle => { user.posts.postTitle == postTitle })
+
+  let int = 0 + found.length
+  console.log(int)
+  console.log(found)
+  console.log("denemee")
+  let url =  user.username + "" + postTitle +""+ int
   let date = Date.now()
   if (postTitle || postText || postTags) {
     let query = Post.create({
+      url,
       postTitle,
       postText,
       postTags,
