@@ -109,6 +109,8 @@ router.get("/post/:postURl", async (req, res) => {
   const post = await query.catch(_ =>
     res.status(404).send("simting gini shit")
   )
+  console.log(post)
+  if(post)
   res.render("post-content",{
     postTitle: post.postTitle,
     postText:  post.postText,
