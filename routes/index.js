@@ -65,7 +65,8 @@ router.post("/profile", async (req, res, next) => {
     }
    })
   let urlPostTitle = postTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '').toLowerCase()
-  let url = user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
+  let url ="/post/"+ user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
+  console.log(url)
   let date = Date.now()
   if (postTitle || postText || postTags) {
     let query = Post.create({
@@ -102,7 +103,18 @@ router.post("/profile", async (req, res, next) => {
     })
   }
 })
-
+router.get("/post/:postURl", async (req, res) => {
+  console.log(req.params.postURl)
+  const query = Post.findOne({ url: req.params.postURl }).exec()
+  const post = await query.catch(_ =>
+    res.status(404).send("simting gini shit")
+  )
+  res.render("post-content",{
+    postTitle: post.postTitle;
+    postText:  post.postText;
+    postTags:  post.postTags;
+  })
+})
 router.get("/login", (req, res) => {
   if (req.session.userId) {
     res.redirect(301, "/profile")
