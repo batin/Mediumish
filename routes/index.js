@@ -11,6 +11,7 @@ let Post = require("../models/post")
  *
  * returns sorted posts as a Json
  */
+
 router.get("/scroll_json.js", async (req, res) => {
   if (req.session) {
     const id = req.session.userId
@@ -242,6 +243,23 @@ router.post("/", async (req, res) => {
   const subscriber = await query.catch(err => res.send(err))
   console.log(subscriber)
   res.redirect("/")
+})
+
+/*
+* Search Engine System
+*/
+router.post("/search-results", async(req,res) =>{
+
+  if(req.body.searchText){
+      const searchText = req.body.searchText
+      const query = Post.find({ postTitle  :searchText  }).exec()
+      const post = await query.catch(err => res.send("something is wrong"))
+      console.log(post);
+      res.render("search-results", {posts: post})
+  }else{
+
+  }
+
 })
 
 module.exports = router

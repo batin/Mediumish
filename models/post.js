@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt")
 const User = require('./user')
 var Schema = mongoose.Schema
 
+
 PostSchema = new Schema({
   url: {
     type : String,
@@ -35,6 +36,7 @@ PostSchema = new Schema({
   }
 })
 
+PostSchema.index({postTitle: 'text'});
 const Post = mongoose.model('Post', PostSchema)
 
 module.exports = Post
