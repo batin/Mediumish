@@ -40,7 +40,7 @@ $(window).scroll( function () {
          loadingPosts = loadingPosts + "<div class='post'>" +
                         "<h1 class='baslik' >" + posts[addedPosts].postTitle + "</h1>" +
                         "<p id='on-yazi'>" + posts[addedPosts].postText + "<p/>" +
-                        "<a class='devamini-oku' href='#'>"+ "Devamını Oku" +"</a>" +
+                        "<a class='devamini-oku' href= " + posts[addedPosts].url + ">" +" Devamını Oku" +"</a>" +
                       "</div>"
         }
         postlar.append(loadingPosts)
@@ -156,7 +156,7 @@ if(url==="login"){
 }
 
 $('.devamini-oku').on('click', _ =>{
-    
+
 
 })
 
