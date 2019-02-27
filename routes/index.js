@@ -65,7 +65,7 @@ router.post("/profile", async (req, res, next) => {
     }
    })
   let urlPostTitle = postTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '').toLowerCase()
-  let url =user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
+  let url ="/post/"+ user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
   console.log(url)
   let date = Date.now()
   if (postTitle || postText || postTags) {
@@ -103,10 +103,13 @@ router.post("/profile", async (req, res, next) => {
     })
   }
 })
-router.get("/:postURl", async (req, res) => {
+/*
+ * opens post-content page
+ */
+router.get("/post/:postURl", async (req, res) => {
   console.log(req.params.postURl)
   const url =   req.params.postURl
-  const query = Post.findOne({ url: url }).exec()
+  const query = Post.findOne({ url: "/post/"+url }).exec() // "/post/" ekledim buraya sorgunun dogru olmasi icin
   const post = await query.catch(_ =>
     res.status(404).send("simting gini shit")
   )
