@@ -110,9 +110,9 @@ router.get("/post/:postURl", async (req, res) => {
     res.status(404).send("simting gini shit")
   )
   res.render("post-content",{
-    postTitle: post.postTitle;
-    postText:  post.postText;
-    postTags:  post.postTags;
+    postTitle: post.postTitle,
+    postText:  post.postText,
+    postTags:  post.postTags,
   })
 })
 router.get("/login", (req, res) => {
