@@ -12,8 +12,9 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top#navbar
         a.nav-link(href='/about') About
       li.nav-item
         a.nav-link(href='/contact') Contact
-      li.nav-item
-        a.nav-link(href='/profile') Profile
+      if currentUser
+        li.nav-item
+          a.nav-link(href='/profile') Profile
       if !currentUser
         li.nav-item
           a.nav-link(href='/login') Login

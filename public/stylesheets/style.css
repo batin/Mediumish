@@ -438,3 +438,9 @@ input{
 #login-page {
   background: white !important;
 }
+#article-content{
+  display: block;
+  margin: auto;
+  width:50%;
+  margin-top: 80px;
+}
