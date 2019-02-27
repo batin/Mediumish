@@ -6,7 +6,7 @@ let User = require("../models/user")
 let bcrypt = require("bcrypt")
 const session = require("express-session")
 const saltRounds = 10
-const Post = require("../models/post")
+let Post = require("../models/post")
 /*
  *
  * returns sorted posts as a Json
@@ -65,7 +65,7 @@ router.post("/profile", async (req, res, next) => {
     }
    })
   let urlPostTitle = postTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '').toLowerCase()
-  let url ="/post/"+ user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
+  let url =user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
   console.log(url)
   let date = Date.now()
   if (postTitle || postText || postTags) {
@@ -103,13 +103,14 @@ router.post("/profile", async (req, res, next) => {
     })
   }
 })
-router.get("/post/:postURl", async (req, res) => {
+router.get("/:postURl", async (req, res) => {
   console.log(req.params.postURl)
-  const query = Post.findOne({ url: req.params.postURl }).exec()
+  const url =   req.params.postURl
+  const query = Post.findOne({ url: url }).exec()
   const post = await query.catch(_ =>
     res.status(404).send("simting gini shit")
   )
-    console.log(post)
+  console.log(post)
   if(post)
   res.render("post-content",{
     postTitle: post.postTitle,
