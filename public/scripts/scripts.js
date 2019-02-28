@@ -39,7 +39,7 @@ $(window).scroll( function () {
         for(addedPosts ;addedPosts <  border ; addedPosts++){
          loadingPosts = loadingPosts + "<div class='post'>" +
                         "<h1 class='baslik' >" + posts[addedPosts].postTitle + "</h1>" +
-                        "<p id='on-yazi'>" + posts[addedPosts].postText + "<p/>" +
+                        "<p id='on-yazi' class='on-yazi-class'>" + posts[addedPosts].postText + "<p/>" +
                         "<a class='devamini-oku' href= " + posts[addedPosts].url + ">" +" Devamını Oku" +"</a>" +
                       "</div>"
         }
@@ -159,6 +159,12 @@ $('.devamini-oku').on('click', _ =>{
 
 
 })
+
+/*
+* Show limited paragraph in profile
+*/
+
+
 
 
 
