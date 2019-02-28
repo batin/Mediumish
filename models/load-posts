@@ -1,9 +1,0 @@
-const express = require("express")
-const app = express()
-
-const returnUserId = app.use(req,res){
-  const userId = req.session.userId
-  return userId
-}
-
-module.exports = returnUserId
