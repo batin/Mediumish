@@ -113,6 +113,7 @@ clientWindow.on("scroll" , _ => {
    }
 })
 }
+
 /*
 * Profile page
 * removes content div & opens posting page div
@@ -160,14 +161,23 @@ $('.devamini-oku').on('click', _ =>{
 
 })
 
-/*
-* Show limited paragraph in profile
-*/
+$('#tags').keypress(e => {
+  console.log(e.keyCode)
+    alert(e.keyCode)
+  if(e.keyCode == 32){
+    console.log("asdasd");
+  }
+})
 
+if(url==="about"){
+  $("#about-page").css({height: height + "px"})
+  $("#our-team").css({height: height + "px"})
 
-
-
-
+  $(".members").hover(_=>{
+    $(this).animate({transform: "rotateY(180deg)"},1000)
+    $(this).animate({display: "none"})
+  })
+}
 /* function myFunction() {
   if (window.top != window.self) {
     document.getElementById("demo").innerHTML = "This window is NOT the topmost window!"

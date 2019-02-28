@@ -467,3 +467,48 @@ input{
   max-width: 100%;
   max-height: 50px;
 }
+#about-content {
+  width: 70%;
+  margin: auto;
+  display: block;
+  margin-top: 80px;
+}
+#who-are-we {
+  text-align: center;
+}
+#about-page{
+  padding-top: 20%;
+}
+#our-team {
+  padding-top: 20%;
+}
+.members{
+  width: 30%;
+  float:left;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.member-photo{
+  width: 100%;
+  height: 100px;
+  margin-bottom: 30px;
+}
+.memb-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 5px solid lightblue;
+  margin: auto;
+  display: block;
+}
+#team-photos {
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+.member-text{
+  text-align: justify;
+}
+.member-name {
+  text-align: center;
+}
