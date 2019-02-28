@@ -1,8 +1,11 @@
 extends layout
 block content
   div#postlar
+    if posts
       each post in posts
         div.post
           h1.baslik #{post.postTitle}
           p#on-yazi #{post.postText}
           a.devamini-oku(href=post.url) Devamını Oku
+    if noMatch
+      h1#noResult #{noMatch} 

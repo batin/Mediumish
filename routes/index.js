@@ -255,7 +255,13 @@ router.post("/search-results", async(req,res) =>{
       const query = Post.find({ postTitle  :searchText  }).exec()
       const post = await query.catch(err => res.send("something is wrong"))
       console.log(post);
+      if(!(post.length < 1)){
       res.render("search-results", {posts: post})
+      console.log("Search Results");
+      }else{
+        res.render("search-results", {noMatch: "No Result"})
+        console.log("no match");
+      }
   }else{
 
   }

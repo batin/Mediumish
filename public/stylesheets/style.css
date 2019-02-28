@@ -346,7 +346,7 @@ td{
   float: right;
   bottom: 0;
 }
-#add-post:hover , #go-back:hover{
+#add-post:hover {
   -webkit-transform: scale(1.4);
   -ms-transform: scale(1.4);
   transform: scale(1.4);
@@ -443,4 +443,21 @@ input{
   margin: auto;
   width:50%;
   margin-top: 80px;
+}
+
+#noResult{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 80px;
+}
+#go-back{
+  transform: rotate(45deg);
+}
+#go-back:hover{
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+  transition: 1s;
+  color: rgb(5, 125, 255,0.8);
+  transform: rotate(45deg);
 }
