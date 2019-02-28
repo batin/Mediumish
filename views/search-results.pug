@@ -5,7 +5,7 @@ block content
       each post in posts
         div.post
           h1.baslik #{post.postTitle}
-          p#on-yazi #{post.postText}
+          p#on-yazi.on-yazi-class #{post.postText}
           a.devamini-oku(href=post.url) Devamını Oku
     if noMatch
       h1#noResult #{noMatch} 

@@ -39,7 +39,7 @@ $(window).scroll( function () {
         while(addedPosts <  border){
          loadingPosts = loadingPosts + "<div class='post'>" +
                         "<h1 class='baslik' >" + posts[addedPosts].postTitle + "</h1>" +
-                        "<p id='on-yazi'>" + posts[addedPosts].postText + "<p/>" +
+                        "<p id='on-yazi' class='on-yazi-class'>" + posts[addedPosts].postText + "<p/>" +
                         "<a class='devamini-oku' href= " + posts[addedPosts].url + ">" +" Devamını Oku" +"</a>" +
                       "</div>"
           addedPosts++
@@ -114,6 +114,7 @@ clientWindow.on("scroll" , _ => {
    }
 })
 }
+
 /*
 * Profile page
 * removes content div & opens posting page div
@@ -167,6 +168,14 @@ $('#tags').tagsinput('add', $("#tags").val(), {preventPost: true});
   }
 })
 
+if(url==="about"){
+  $("#about-page").css({height: height + "px"})
+  $("#our-team").css({height: height + "px"})
+
+  $(".members").hover( _ =>{
+    $( "#target" ).hide()
+  })
+}
 /* function myFunction() {
   if (window.top != window.self) {
     document.getElementById("demo").innerHTML = "This window is NOT the topmost window!"

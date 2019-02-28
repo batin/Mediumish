@@ -252,6 +252,7 @@ router.post("/search-results", async(req,res) =>{
 
   if(req.body.searchText){
       const searchText = new RegExp(req.body.searchText, 'i')
+      // search engine optimization
       const query = Post.find({ postTitle  :{ $regex: new RegExp('.*' + req.body.searchText + '.*', "i") }  }).exec()
       const post = await query.catch(err => res.send("something is wrong"))
       console.log(post);
