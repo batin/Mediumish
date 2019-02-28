@@ -23,25 +23,26 @@ let posts = $.ajax({
   dataType: 'json'
 }).responseJSON
 
-let addedPosts = 3;
 let border = 4;
 /*
 * profile page
 * this function is triggered when users scroll
 */
 $(window).scroll( function () {
+  let addedPosts = 3;
   const scrollBottom = clientWindow.height() + clientWindow.scrollTop()
   const bottomPostlar  = $('#postlar').position().top + $("#postlar").height() -100
   if(scrollBottom > bottomPostlar){
     if(addedPosts <= posts.length){
 
         var loadingPosts = ""
-        for(addedPosts ;addedPosts <  border ; addedPosts++){
+        while(addedPosts <  border){
          loadingPosts = loadingPosts + "<div class='post'>" +
                         "<h1 class='baslik' >" + posts[addedPosts].postTitle + "</h1>" +
                         "<p id='on-yazi'>" + posts[addedPosts].postText + "<p/>" +
                         "<a class='devamini-oku' href= " + posts[addedPosts].url + ">" +" Devamını Oku" +"</a>" +
                       "</div>"
+          addedPosts++
         }
         postlar.append(loadingPosts)
         border = border + 1
@@ -160,11 +161,9 @@ $('.devamini-oku').on('click', _ =>{
 
 })
 
-$('#tags').keypress(e => {
-  console.log(e.keyCode)
-    alert(e.keyCode)
+$('#tags').keydown(e => {
   if(e.keyCode == 32){
-    console.log("asdasd");
+$('#tags').tagsinput('add', $("#tags").val(), {preventPost: true});
   }
 })
 
