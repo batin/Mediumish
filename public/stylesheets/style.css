@@ -364,16 +364,21 @@ td{
   padding-top: 30px;
 
 }
-#post-title , #post-text , #tags{
+.form-control{
   width: 100%;
   display: block;
   margin-top: 20px;
   border: 7px solid bisque;
   border-radius: 6px;
 }
-input{
-  text-indent: 10px;
+#post-title , #post-text {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  border: 7px solid bisque;
+  border-radius: 6px;
 }
+
 #post-title{
   height: 10%;
 }
