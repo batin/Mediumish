@@ -172,8 +172,9 @@ if(url==="about"){
   $("#about-page").css({height: height + "px"})
   $("#our-team").css({height: height + "px"})
 
-  $(".members").hover( event =>{
-    event.target.css({ display: "none"})
+  $(".members").hover(function() {
+     $( this ).fadeOut( 100 );
+     $( this ).fadeIn( 500 );
   })
 }
 /* function myFunction() {
