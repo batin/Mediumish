@@ -160,7 +160,13 @@ $('.devamini-oku').on('click', _ =>{
 
 })
 
-
+$('#tags').keypress(e => {
+  console.log(e.keyCode)
+    alert(e.keyCode)
+  if(e.keyCode == 32){
+    console.log("asdasd");
+  }
+})
 
 /* function myFunction() {
   if (window.top != window.self) {
