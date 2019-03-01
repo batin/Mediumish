@@ -13,7 +13,7 @@ const countKeyUp = function() {
 }
 const keyUpCounter = countKeyUp()
 
-password.click( function(){
+password.focus( function(){
   animateDiv.html('<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">'+
   '<path d="M147 75C147 114.765 114.765 147 75 147C35.2355 147 3 114.765 3 75C3 35.2355 35.2355 3 75 3C114.765 3 147 35.2355 147 75Z" fill="white" stroke="#007BFF" stroke-width="6"/>'+
   '<path d="M60.5 100C62.1667 98.3333 66.2 96 69 100" stroke="black"/>'+
@@ -176,7 +176,7 @@ animateDiv.html('<svg width="150" height="150" viewBox="0 0 150 150" fill="none"
 '</svg>'
 
 )
-mail.click(function(){
+mail.focus(function(){
   animateDiv.html('<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">'+
   '<path d="M147 75C147 114.765 114.765 147 75 147C35.2355 147 3 114.765 3 75C3 35.2355 35.2355 3 75 3C114.765 3 147 35.2355 147 75Z" fill="white" stroke="#007BFF" stroke-width="6"/>'+
   '<path d="M110 75C110 102.614 102.114 125 74.5 125C46.8858 125 41 102.614 41 75C41 47.3858 46.8858 25 74.5 25C102.114 25 110 47.3858 110 75Z" fill="#C4C4C4"/>'+
