@@ -91,6 +91,18 @@ const animateFunction =  _ =>{
   )
 }
 
+const animateFunctionAbout =  _ =>{
+    $("#team-photos").animate(
+	{'left': '50%','margin-left': - $('.left1').width()/2 , opacity: 1},
+  {
+    duration: 1500,
+    easing: "swing",
+
+  }
+  )
+
+
+}
 
 $("#welcome-container").css({ width: width + "px", height: height + "px" })
 $("#index-content").css({ width: width + "px", height: height + "px" })
@@ -102,7 +114,14 @@ $("#action-button").click(e => {
   e.preventDefault()
   const position = $("#index-content").offset().top
   animateFunction()
-  $(window).animate($(window).scrollTop(position), 200)
+  $("html").animate({scrollTop: position}, 500, function(){console.log("scrolled")})
+})
+
+$("#see-our").click(e => {
+  e.preventDefault()
+  const position = $("#our-team").offset().top
+  animateFunctionAbout()
+  $("html").animate({scrollTop: position}, 500, function(){console.log("scrolled")})
 })
 
 if(url===""){
@@ -110,6 +129,15 @@ clientWindow.on("scroll" , _ => {
   const myHeight = height / 2
    if (clientWindow.scrollTop() > myHeight){
      animateFunction()
+   }
+})
+}
+
+if(url==="about"){
+clientWindow.on("scroll" , _ => {
+  const myHeight = height / 2
+   if (clientWindow.scrollTop() > myHeight){
+     animateFunctionAbout()
    }
 })
 }
@@ -161,13 +189,7 @@ $('.devamini-oku').on('click', _ =>{
 
 })
 
-$('#tags').keypress(e => {
-  console.log(e.keyCode)
-    alert(e.keyCode)
-  if(e.keyCode == 32){
-    console.log("asdasd")
-  }
-})
+
 
 if(url==="about"){
   $("#about-page").css({height: height + "px"})
@@ -194,9 +216,10 @@ if(url==="about"){
         duration:1000
       }
 )})
-
-
 }
+
+
+
 /* function myFunction() {
   if (window.top != window.self) {
     document.getElementById("demo").innerHTML = "This window is NOT the topmost window!"

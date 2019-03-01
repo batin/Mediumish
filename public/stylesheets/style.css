@@ -364,16 +364,21 @@ td{
   padding-top: 30px;
 
 }
-#post-title , #post-text , #tags{
+.form-control{
+  width: 100%;
+  display: block;
+
+  border: 7px solid bisque;
+  border-radius: 6px;
+}
+#post-title , #post-text {
   width: 100%;
   display: block;
   margin-top: 20px;
   border: 7px solid bisque;
   border-radius: 6px;
 }
-input{
-  text-indent: 10px;
-}
+
 #post-title{
   height: 10%;
 }
@@ -483,7 +488,7 @@ input{
   text-align: justify;
 }
 #our-team {
-  padding-top: 20%;
+  padding-top: 13%;
 }
 .member-container{
   width: 30%;
@@ -507,7 +512,7 @@ input{
 }
 #team-photos {
   width: 70%;
-  height: 85%;
+  height: 71%;
   margin: auto;
 }
 .member-text{
@@ -522,7 +527,7 @@ input{
 }
 .members {
   width: 100%;
-  background: lightcoral;
+  background: lightgray;
   color:white;
   height:100%;
   padding: 30px;
@@ -530,7 +535,7 @@ input{
 }
 .skill-set{
   display: none;
-  background: lightcoral;
+  background: lightgray;
   color:white;
   height: 100%;
   border-radius: 23px;
@@ -541,5 +546,21 @@ input{
   line-height: 30px;
   text-align: center;
   padding-left: 0;
-
 }
+
+ .my-lg-0 .form-control{
+   margin-top:0;
+ }
+
+ #team-photos{
+   opacity: 0;
+ }
+ #login-div {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  margin: auto;
+  background: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+ }
