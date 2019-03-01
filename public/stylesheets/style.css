@@ -565,3 +565,28 @@ td{
   margin-bottom: 20px;
   margin-top: 20px;
  }
+#message-div{
+  width: 170px;
+  height: 66px;
+  position: relative;
+  background: white;
+  z-index: 10000;
+  border-radius: 57px;
+  top: 50px;
+  left: 215px;
+  opacity: 0;
+  display: table;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.eposta{
+     opacity: 1 !important;
+     border: 3px solid lightskyblue;
+
+
+ }
+ .message-popup{
+   display: table-cell;
+   vertical-align: middle;
+ }
