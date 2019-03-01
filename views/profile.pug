@@ -17,10 +17,10 @@ block content
             td#sayi 20
   div#post-page   
     form#post(method = "POST" action = "/profile")
-      input#post-title(name = "postTitle" placeholder = "Baslik" type = "text")
+      input#post-title.inp(name = "postTitle" placeholder = "Baslik" type = "text")
       div#post-text
-        input#post-text-input(name = "postText" placeholder = "Text" type = "text")
-      input.form-control(type='text', value='Batin', data-role='tagsinput')
+        textarea#post-text-input(placeholder='Text' required='true')
+      input.form-control.inp(type="text" value="" data-role="tagsinput")
       button#content-paylas.btn.btn-primary.btn-lg.btn-block(type='submit') Paylaş
   div#profile-content
     div#postlar
