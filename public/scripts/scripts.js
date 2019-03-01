@@ -23,26 +23,25 @@ let posts = $.ajax({
   dataType: 'json'
 }).responseJSON
 
+let addedPosts = 3;
 let border = 4;
 /*
 * profile page
 * this function is triggered when users scroll
 */
 $(window).scroll( function () {
-  let addedPosts = 3;
   const scrollBottom = clientWindow.height() + clientWindow.scrollTop()
   const bottomPostlar  = $('#postlar').position().top + $("#postlar").height() -100
   if(scrollBottom > bottomPostlar){
     if(addedPosts <= posts.length){
 
         var loadingPosts = ""
-        while(addedPosts <  border){
+        for(addedPosts ;addedPosts <  border ; addedPosts++){
          loadingPosts = loadingPosts + "<div class='post'>" +
                         "<h1 class='baslik' >" + posts[addedPosts].postTitle + "</h1>" +
                         "<p id='on-yazi' class='on-yazi-class'>" + posts[addedPosts].postText + "<p/>" +
                         "<a class='devamini-oku' href= " + posts[addedPosts].url + ">" +" Devamını Oku" +"</a>" +
                       "</div>"
-          addedPosts++
         }
         postlar.append(loadingPosts)
         border = border + 1
@@ -162,19 +161,41 @@ $('.devamini-oku').on('click', _ =>{
 
 })
 
-$('#tags').keydown(e => {
+$('#tags').keypress(e => {
+  console.log(e.keyCode)
+    alert(e.keyCode)
   if(e.keyCode == 32){
-$('#tags').tagsinput('add', $("#tags").val(), {preventPost: true});
+    console.log("asdasd")
   }
 })
 
 if(url==="about"){
   $("#about-page").css({height: height + "px"})
   $("#our-team").css({height: height + "px"})
+  let angle = 0;
 
-  $(".members").hover( event =>{
-    event.target.css({ display: "none"})
-  })
+  $(".members").hover( function(){
+    let angle = 1
+    $(this).animate (
+      {opacity: 0},
+      {
+        step: function() {
+          angle = angle + 1
+          $(this).css({
+          "-moz-transform":"rotateY("+angle+"deg)",
+          "-webkit-transform":"rotateY("+angle+"deg)",
+          "-ms-transform":"rotateY("+angle+"deg)",
+          "-o-transform":"rotateY("+angle+"deg)"
+        }) } ,
+        complete: function(){
+          $(this).css({display:"none"})
+          $(this).siblings().css({display:"block"})
+        },
+        duration:1000
+      }
+)})
+
+
 }
 /* function myFunction() {
   if (window.top != window.self) {
