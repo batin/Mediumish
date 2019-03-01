@@ -189,7 +189,11 @@ $('.devamini-oku').on('click', _ =>{
 
 })
 
-
+$('#tags').keypress(e => {
+  if(e.which == 32){
+    alert("buraya ozel script gelecek")
+  }
+})
 
 if(url==="about"){
   $("#about-page").css({height: height + "px"})
@@ -217,31 +221,3 @@ if(url==="about"){
       }
 )})
 }
-
-
-
-/* function myFunction() {
-  if (window.top != window.self) {
-    document.getElementById("demo").innerHTML = "This window is NOT the topmost window!"
-  } else {
-    document.getElementById("demo").innerHTML = "This window is the topmost window!"
-  }
-} */
-
-
-// function counter(){
-// 	var counterNumber = 0
-// 	function innerFunction(){
-// 		counterNumber = counterNumber + 1
-// 		return counterNumber
-// 	}
-// 	return innerFunction
-// }
-//
-// const verify = $("#verify")
-//
-// let counterNumber = counter()
-// verify.click( _ => {
-// 	if(counterNumber() % 2 === 1){	verify.val(true)	}
-// 	else{	verify.val(false)	}
-// })

@@ -390,6 +390,7 @@ td{
   border: none;
   width: 100%;
   display: block;
+  height: 100%;
 }
 #post-text::placeholder {
   font-size: 20px;
