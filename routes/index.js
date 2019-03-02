@@ -76,6 +76,7 @@ router.post("/profile", async (req, res, next) => {
   let { postTitle, postText, postTags } = req.body
   id = req.session.userId
   let user
+  if (postTitle || postText || postTags) {
   if (id) {
     const query = User.findOne({ _id: id }).exec()
     user = await query.catch(_ => res.status(404).send("simting gini shit"))
@@ -90,7 +91,6 @@ router.post("/profile", async (req, res, next) => {
   let url ="/post/"+ user.userName +"-"+ urlPostTitle +"-"+ (counter + 1)
   console.log(url)
   let date = Date.now()
-  if (postTitle || postText || postTags) {
     let query = Post.create({
       url,
       postTitle,
