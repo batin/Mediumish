@@ -591,7 +591,7 @@ td{
    vertical-align: middle;
 }
  #contact-form{
-    width: 42%;
+    width: 100%;
     margin: auto;
     margin-top: auto;
     display: block;
@@ -623,4 +623,9 @@ td{
     padding-top: 3px;
     padding-bottom: 3px;
 
+ }
+ #contact-form-div{
+   margin: auto;
+   width: auto;
+   display: table;
  }
