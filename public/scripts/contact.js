@@ -255,7 +255,7 @@ function loopAnimationOne() {
               setTimeout(function(){
                 console.log("six")
                 contactFormDiv.html('<div id="done">' +
-                    '<h3 id="done-header"> '+ 'Mesajınız Gönderildi' +' </h3>' +
+                    '<h3 id="done-header"> '+ 'Message Send!' +' </h3>' +
                 '</div>'
 )
           },500)
