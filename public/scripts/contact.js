@@ -246,10 +246,23 @@ function loopAnimationOne() {
             )
 },500)
         setTimeout(function(){
-          loopAnimationOne()
+          AnimationDone()
         },500)
 
           }
+
+          function AnimationDone() {
+              setTimeout(function(){
+                console.log("six")
+                contactFormDiv.html('<div id="done">' +
+                    '<h3 id="done-header"> '+ 'Mesajınız Gönderildi' +' </h3>' +
+                '</div>'
+)
+          },500)
+
+
+                }
+
 
 
 

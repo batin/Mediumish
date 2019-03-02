@@ -608,7 +608,7 @@ td{
 
  }
  #contract-page{
-   margin-top: 14%;
+   margin-top: 10%;
  }
  #contact-page-header{
    text-align: center;
@@ -629,3 +629,10 @@ td{
    width: auto;
    display: table;
  }
+#done{
+  padding: 50px;
+  border: 10px solid lightblue;
+  border-radius: 40px;
+
+  color: lightblue;
+}
