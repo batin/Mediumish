@@ -184,13 +184,9 @@ if(url==="login"){
   disappearFunc(errorPage)
 }
 
-$('.devamini-oku').on('click', _ =>{
 
-
-})
-
-$('#tags').keypress(e => {
-  if(e.which == 32){
+$('#postTags').keyup(e => {
+  if(e.keycode == 32){
     alert("buraya ozel script gelecek")
   }
 })

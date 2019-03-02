@@ -355,7 +355,7 @@ td{
 }
 #post-page{
   display: none;
-
+  margin-left: 10px;
 }
 #post{
   width: 65%;
