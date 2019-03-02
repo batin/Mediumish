@@ -7,6 +7,28 @@ let bcrypt = require("bcrypt")
 const session = require("express-session")
 const saltRounds = 10
 let Post = require("../models/post")
+let Contact = require("../models/contact")
+
+
+
+/*
+ *
+ * get json from contact-form
+ */
+router.post("/contact_form.js", async(req,res)=>{
+  const {name,surname,mail,message} = req.body
+  const query = Contact.create({name,surname, mail,message})
+  const messageQuery = query.catch(_=>{ "something went wrong bro"})
+  res.send("everything is OK")
+
+
+})
+
+
+
+
+
+
 /*
  *
  * returns sorted posts as a Json

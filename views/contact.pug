@@ -2,4 +2,20 @@ extends layout
 
 block content
   div#contract-page
-    p CONTRACT PAGE
+    div#contact-animation
+    div#contact-form
+      h1#contact-page-header Contact Page
+      form#contact-form(method="POST",action="/contact")
+        input#contact-name.contact-input(name="name",  placeholder="First Name", type="text")
+        input#contact-surname.contact-input(name="surname",  placeholder="Surname" ,type="text")
+        input#contact-mail.contact-input(name="mail" ,  placeholder="E-mail", type="mail")
+        textarea#contact-text.contact-input(name="message" , rows="5", cols="20", placeholder="Mesajınız")
+        button#contact-submit.contact-input(  type="submit") Submit
+        
+      
+      
+      
+      
+      
+      
+  script(type="application/x-javascript" src="/scripts/contact.js")

@@ -589,4 +589,38 @@ td{
  .message-popup{
    display: table-cell;
    vertical-align: middle;
+}
+ #contact-form{
+    width: 42%;
+    margin: auto;
+    margin-top: auto;
+    display: block;
+    height: 800px;
+    margin-top: 20px;
+ }
+ .contact-input{
+     margin: auto;
+   display: block;
+   margin-top: 10px;
+    border: 6px solid lightsteelblue;
+    border-radius: 9px;
+    width: 350px;
+
+ }
+ #contract-page{
+   margin-top: 14%;
+ }
+ #contact-page-header{
+   text-align: center;
+}
+ #contact-submit{
+   background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 9px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
  }
