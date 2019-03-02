@@ -19,13 +19,12 @@ router.post("/contact_form.js", async(req,res)=>{
   const {name,surname,mail,message} = req.body
   const query = Contact.create({name,surname, mail,message})
   const messageQuery = query.catch(_=>{ "something went wrong bro"})
+  console.log(messageQuery)
+  console.log(query)
   res.send("everything is OK")
 
 
 })
-
-
-
 
 
 
