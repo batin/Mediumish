@@ -185,8 +185,8 @@ if(url==="login"){
 }
 
 
-$('#postTags').keyup(e => {
-  if(e.keycode == 32){
+$("#post-tags").keydown(function(e) {
+  if(e.which == 32){
     alert("buraya ozel script gelecek")
   }
 })
