@@ -10,12 +10,14 @@ const pathname = $(document)[0].URL
 const errorPage = $("#errorPage")
 let url = pathname.split("/");
 url = url[3]
+
 if (url==="profile"){
 /*
 * profile page
 * gets posts as a Json
 */
 const postlar = $("#postlar")
+if(postlar) {
 let loadedPosts = 3 //posts that already loaded
 let posts = $.ajax({
   url: "scroll_json.js",
@@ -23,8 +25,10 @@ let posts = $.ajax({
   dataType: 'json'
 }).responseJSON
 
-let addedPosts = 3;
-let border = 4;
+
+let border = 3;
+let addedPosts = 2;
+
 /*
 * profile page
 * this function is triggered when users scroll
@@ -36,7 +40,7 @@ $(window).scroll( function () {
     if(addedPosts <= posts.length){
 
         var loadingPosts = ""
-        for(addedPosts ;addedPosts <  border ; addedPosts++){
+        for( ;addedPosts <  border ; addedPosts++){
          loadingPosts = loadingPosts + "<div class='post'>" +
                         "<h1 class='baslik' >" + posts[addedPosts].postTitle + "</h1>" +
                         "<p id='on-yazi' class='on-yazi-class'>" + posts[addedPosts].postText + "<p/>" +
@@ -48,6 +52,7 @@ $(window).scroll( function () {
       }
   }
 })
+}
 }
 /*
 * profile page
@@ -153,7 +158,7 @@ addButton.click( _ => {
   contentDiv.css({display:'none'})
   postPage.css({ display: "block", height: height + "px", width: 100 + '%'})
   const position = postPage.offset().top
-    $(window).animate($(window).scrollTop(position), 1500)
+  $(window).animate($(window).scrollTop(position), 1500)
 })
 /*
 * Profile page
@@ -176,8 +181,13 @@ $('#post-text').on('click', _ => {
 })
 
 if (url==="profile"){
-  disappearFunc(succesMessage)
-  disappearFunc(failMessage)
+  if(succesMessage){
+    disappearFunc(succesMessage)
+  }
+  if(failMessage){
+    disappearFunc(failMessage)
+  }
+
 }
 
 if(url==="login"){

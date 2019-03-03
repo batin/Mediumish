@@ -7,7 +7,7 @@ block content
       form#contact-form(method="POST",action="/contact")
         input#contact-name.contact-input(name="name",  placeholder="First Name", type="text")
         input#contact-surname.contact-input(name="surname",  placeholder="Surname" ,type="text")
-        input#contact-mail.contact-input(name="mail" ,  placeholder="E-mail", type="mail")
+        input#contact-mail.contact-input(name="mail" ,  placeholder="E-mail", type="email",required="true")
         textarea#contact-text.contact-input(name="message" , rows="5", cols="20", placeholder="Message")
         button#contact-submit.contact-input(  type="submit") Submit
         
