@@ -184,13 +184,6 @@ if(url==="login"){
   disappearFunc(errorPage)
 }
 
-
-$("#post-tags").keydown(function(e) {
-  if(e.which == 32){
-    alert("buraya ozel script gelecek")
-  }
-})
-
 if(url==="about"){
   $("#about-page").css({height: height + "px"})
   $("#our-team").css({height: height + "px"})
@@ -217,3 +210,8 @@ if(url==="about"){
       }
 )})
 }
+
+const tag = $("#post-tags3")
+tag.focus( function() {
+  $(this).css({display:"none"})
+})
