@@ -1,4 +1,12 @@
+
 const tag = $("#post-tags3")
-tag.focus( function() {
-  $(this).css({display:"none"})
+
+$('#tags').on('focus', 'input', function(event){
+    $(this).val("#")
+    $(this).keyup(event => {
+      if(event.which == 32 ){
+        $(this).parent().append('<p class ="tagClass" href="#">'+tag.val()+'</p>')
+        $(this).val("#")
+      }
+    })
 })
