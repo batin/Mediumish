@@ -290,17 +290,18 @@ $.fn.serializeObject = function()
 contactSubmit.click(function(e){
   e.preventDefault()
   const data = JSON.stringify(contactForm.serializeObject())
-  console.log(data);
+  console.log(data)
 
 
   $.ajax({
     url: "/contact_form.js",
     contentType: "application/json",
-    async: false,
+    async: true,
     type: "POST",
     data: data,
     success: function() {
                 loopAnimationOne()
+                console.log(data)
             }
   })
 
