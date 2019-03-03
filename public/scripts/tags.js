@@ -1,12 +1,14 @@
 
 const tag = $("#post-tags3")
-
+let count = 0
 $('#tags').on('focus', 'input', function(event){
+  if(count == 0){
     $(this).val("#")
-    $(this).keyup(event => {
-      if(event.which == 32 ){
-        $(this).parent().append('<p class ="tagClass" href="#">'+tag.val()+'</p>')
-        $(this).val("#")
-      }
-    })
+    count++
+  }
+  $(this).keyup(event => {
+    if(event.which == 32 ){
+      $(this).val(tag.val()+" #")
+    }
+  })
 })
